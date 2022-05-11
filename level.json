@@ -14,7 +14,7 @@
 	"items":[{"bg":"items/key.png", "coords":[{"x":256, "y":256}]}],
 	"entities":
 	[
-	{"type":"police", "x":600,"y":400,"damage":4,"radius":1,
+	{"type":"policeman", "x":600,"y":400,"damage":4,"radius":1,
 	"down1":"enemies/policeman_down1.png", 
 	"down2":"enemies/policeman_down1.png",
 	"up1":"enemies/policeman_down1.png",

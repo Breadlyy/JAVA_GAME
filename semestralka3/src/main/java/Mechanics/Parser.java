@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import Entities.Entity;
 import draw.ImageGetter;
+import enemies.Policeman;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -130,7 +131,7 @@ public class Parser
                 e.y = y;
                 e.items = items1;
                 e.damage = damage;
-                e.radiusToGet = radius;
+                e.radiusAttack = radius;
                 e.down1 = ImageGetter.getImage(o1.get("down1").toString());
                 e.down2 = ImageGetter.getImage(o1.get("down2").toString());
                 e.up1 = ImageGetter.getImage(o1.get("up1").toString());
@@ -139,7 +140,13 @@ public class Parser
                 e.left2 = ImageGetter.getImage(o1.get("left2").toString());
                 e.right1 = ImageGetter.getImage(o1.get("right1").toString());
                 e.right2 = ImageGetter.getImage(o1.get("right2").toString());
-
+                if(e.type.equals("policeman"))
+                {
+                    Policeman p = new Policeman(e);
+                    p.setGp(gp);
+                    entities.add(p);
+                    continue;
+                }
 
 
                 entities.add(e);

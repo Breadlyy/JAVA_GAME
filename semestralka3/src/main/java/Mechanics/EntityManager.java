@@ -1,6 +1,7 @@
 package Mechanics;
 
 import Entities.Entity;
+import enemies.Policeman;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -21,7 +22,12 @@ public class EntityManager
         if (entities == null) return;
         for (Entity e: entities)
         {
-            e.update();
+            if(e.type.equals("policeman"))
+            {
+                ((Policeman)e).update();
+            }
+
+
         }
     }
 
