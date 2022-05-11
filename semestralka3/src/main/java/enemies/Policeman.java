@@ -13,7 +13,9 @@ public class Policeman extends Entity {
     private Player agressiveOn;
     private GamePanel gp;
     private static final int maxAgressive = 1000;
+    private static final int maxCooldown = 60;
     private int agressiveCounter = 0;
+    private int cooldown = 0;
 
 
     public void setGp(GamePanel gp) {
@@ -42,6 +44,14 @@ public class Policeman extends Entity {
     }
 
     public void setAction() {
+
+        if(near(gp.player, radiusAttack) && cooldown == 0)
+        {
+            gp.player.contactPoliceman(this);
+            cooldown = 100;
+        }
+
+        if(cooldown>0)cooldown--;
 
         if (!can_be_moved) {
             speed = 0;
