@@ -16,13 +16,13 @@
 	[
 	{"type":"policeman", "x":600,"y":400,"damage":4,"radius":1,
 	"down1":"enemies/policeman_down1.png", 
-	"down2":"enemies/policeman_down1.png",
-	"up1":"enemies/policeman_down1.png",
-	"up2":"enemies/policeman_down1.png",
-	"left1":"enemies/policeman_down1.png",
-	"left2":"enemies/policeman_down1.png",
-	"right1":"enemies/policeman_down1.png",
-	"right2":"enemies/policeman_down1.png",
+	"down2":"enemies/policeman_down2.png",
+	"up1":"enemies/policeman_up1.png",
+	"up2":"enemies/policeman_up2.png",
+	"left1":"enemies/policeman_left1.png",
+	"left2":"enemies/policeman_left2.png",
+	"right1":"enemies/policeman_right1.png",
+	"right2":"enemies/policeman_right2.png",
 	"items":[{"bg":"items/key.png", "type":"key", "coords":[{"x":256, "y":256}]}]
 	}
 	]	

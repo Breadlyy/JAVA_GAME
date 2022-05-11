@@ -24,6 +24,7 @@ public class Entity
 
     public ArrayList<Item> items;
     public BufferedImage up1, up2, down1, down2, left1, left2, right1, right2;
+    public BufferedImage actualImage;
 
     public float xNext = 500;
     public float yNext = 500;
@@ -72,15 +73,14 @@ public class Entity
     public void draw(Graphics2D g2)
     {
 
-        BufferedImage image = down1;
-        g2.drawImage(image, Math.round(x), Math.round(y), 64, 64, null);
+        g2.drawImage(actualImage, Math.round(x), Math.round(y), 64, 64, null);
 
     }
 
     public void draw(Graphics2D g2, int deltax)
     {
-        BufferedImage image = down1;
-        g2.drawImage(image, Math.round(x+deltax), Math.round(y), 64, 64, null);
+
+        g2.drawImage(actualImage, Math.round(x+deltax), Math.round(y),64,64, null);
 
     }
 

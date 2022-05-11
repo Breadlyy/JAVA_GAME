@@ -6,6 +6,7 @@ import Mechanics.EntityManager;
 import Mechanics.GamePanel;
 import draw.ImageGetter;
 
+import java.awt.image.BufferedImage;
 import java.util.Random;
 
 public class Policeman extends Entity {
@@ -16,7 +17,7 @@ public class Policeman extends Entity {
     private static final int maxCooldown = 60;
     private int agressiveCounter = 0;
     private int cooldown = 0;
-
+    private int spritecounter = 0;
 
     public void setGp(GamePanel gp) {
         this.gp = gp;
@@ -24,6 +25,7 @@ public class Policeman extends Entity {
 
     public Policeman(Entity e) {
         super(e);
+        actualImage = down1;
     }
 
     public Policeman(GamePanel gp) {
@@ -68,16 +70,45 @@ public class Policeman extends Entity {
             agressiveOn=null;
         }
 
+        spritecounter++;
+        if(spritecounter > 10) {
+            System.out.println("aaa");
+            switch (direction) {
+                case ("up"): {
+                    actualImage = (actualImage == up1) ? up2 : up1;
+                    break;
+                }
+                case ("right"): {
+                    actualImage = (actualImage == right1) ? right2 : right1;
+                    break;
+                }
+                case ("left"): {
+                    actualImage = (actualImage == left1) ? left2 : left1;
+                    break;
+                }
+                case ("down"): {
+                    actualImage = (actualImage == down1) ? down2 : down1;
+                    break;
+                }
+            }
+        }
+
+
         if (agressiveOn != null && !near(agressiveOn, radiusAttack)) {
             agressiveCounter--;
-            if (agressiveOn.x > x && Math.abs(agressiveOn.x - x) > radiusAttack) {
+
+            if (agressiveOn.x > x && Math.abs(agressiveOn.x - x) > radiusAttack)
+            {
                 xNext += speed;
             } else if (agressiveOn.x < x && Math.abs(agressiveOn.x - x) > radiusAttack) {
                 xNext -= speed;
+
             } else if (agressiveOn.y > y && Math.abs(agressiveOn.y - y) > radiusAttack) {
                 yNext += speed;
+
             } else  if (Math.abs(agressiveOn.y - y) > radiusAttack){
                 yNext -= speed;
+
             }}
         else{
                 actionLockCounter++;
@@ -123,8 +154,6 @@ public class Policeman extends Entity {
                             }
 
                         }
-
-
                         direction = "up";
                     }
                     if (i > 25 && i <= 50) {
@@ -154,6 +183,7 @@ public class Policeman extends Entity {
             }
         x = xNext;
         y = yNext;
+        if(spritecounter>12) spritecounter=0;
         }
 
         private boolean near(Player p, int rad)
