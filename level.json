@@ -6,19 +6,17 @@
 	{"bg":"tiles/tile4.png","type":"tile","collision":true, "canget":false,"coords":[{"x":678, "y":12}, {"x":791, "y":12},{"x":903,"y":12}, {"x":1016, "y":12}, {"x":1128, "y":12}]},
 	{"bg":"tiles/tile3.png","type":"tile","collision":true, "canget":false,"coords":[{"x":678, "y":656}, {"x":791, "y":656},{"x":903,"y":656}, {"x":1016, "y":656}, {"x":1128, "y":656}]},
 	{"bg":"items/key.png","type":"key","collision":false, "canget":true, "coords":[{"x":256, "y":256}]},
-	{"bg":"tiles/door.png", "bg2":"tiles/door1.png", "type":"door", "collision" true, "canget":false, "coords":[{"x":1900,"y":300}]}
-	{"bg":"items/magnet.png","type":"item", "collision":false,"canget":true,"coords":[{"x":430,"y":600}]}
+	{"bg":"tiles/door.png", "bg2":"tiles/door1.png", "type":"door", "collision": true, "canget":false, "coords":[{"x":1900,"y":300}]},
+	{"bg":"items/magnet.png","type":"item", "collision":false,"canget":true,"coords":[{"x":430,"y":600}]},
 	{"bg":"items/bat.png", "type":"weapon", "damage":7, "radius":30, "collision":false,"canget":true,"coords":[{"x":730,"y":600}]}
 	]
 	,
-<<<<<<< HEAD
+
 	"items":[{"bg":"items/key.png", "coords":[{"x":256, "y":256}]}]
-<<<<<<< HEAD
+
 }
-=======
 }
->>>>>>> 0b76d89526d7162e8f3fae84e78f97cade5d7853
-=======
+
 	"items":[{"bg":"items/key.png", "coords":[{"x":256, "y":256}]}],
 	"entities":
 	[
